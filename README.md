@@ -6,9 +6,9 @@
 ## Metric
 - 평가 산식 : Pseudo SFA(PSFA)
 
-$PSFA_m=1 - {1 \over n} {\sum}\_{day=1}^N {\sum}\_{i=1}^N ({{|y_i^{day} - p_i^{day}|} \over {max (y_i^{day}, p_i^{day})}} \times {y_i^{day} \over {{\sum}\_{i=1}^N y_i^{day}}})$
+  $PSFA_m=1 - {1 \over n} {\sum}\_{day=1}^N {\sum}\_{i=1}^N ({{|y_i^{day} - p_i^{day}|} \over {max (y_i^{day}, p_i^{day})}} \times {y_i^{day} \over {{\sum}\_{i=1}^N y_i^{day}}})$
 
-$PSFA = {1 \over M} {\sum}\_{m=1}^M PSFA_m$
+  $PSFA = {1 \over M} {\sum}\_{m=1}^M PSFA_m$
 
 ## Data
 15890개의 제품별 데이터(시계열 데이터)
