@@ -11,13 +11,15 @@ $PSFA_m=1 - {1 \over n} {\sum}\_{day=1}^N {\sum}\_{i=1}^N ({{|y_i^{day} - p_i^{d
 $PSFA = {1 \over M} {\sum}\_{m=1}^M PSFA_m$
 
 ## Data
-15890개의 제품별 데이터
+15890개의 제품별 데이터(시계열 데이터)
 - train.csv
 - sales.csv
-- product_info.csv
 - sample_submission.csv
 
-3170개의 브랜드별 데이터
+15890개의 제품별 설명 데이터(자연어 데이터)
+- product_info.csv
+
+3170개의 브랜드별 데이터(시계열 데이터)
 - brand_keyword_cnt.csv
 
 ## Run
