@@ -20,6 +20,15 @@ $PSFA = {1 \over M} {\sum}\_{m=1}^M PSFA_m$
 3170개의 브랜드별 데이터
 - brand_keyword_cnt.csv
 
+## Run
+```
+# train
+python train.py
+
+# inference
+python inference.py
+```
+
 ## LB
 - Public LB : 0.54446
 - Private LB : 0.52261
