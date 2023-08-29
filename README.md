@@ -5,10 +5,16 @@
 
 ## Metric
 - 평가 산식 : Pseudo SFA(PSFA)
+  - i : 대분류 내에서 제품 index  
+  - M : 대분류 index  
+  - $y_i^{day}$ : i번째 제품의 day일의 판매량  
+  - $p_i^{day}$ : i번째 제품의 day일의 예측량
 
   $PSFA_m=1 - {1 \over n} {\sum}\_{day=1}^N {\sum}\_{i=1}^N ({{|y_i^{day} - p_i^{day}|} \over {max (y_i^{day}, p_i^{day})}} \times {y_i^{day} \over {{\sum}\_{i=1}^N y_i^{day}}})$
 
   $PSFA = {1 \over M} {\sum}\_{m=1}^M PSFA_m$
+
+  
 
 ## Data
 15890개의 제품별 데이터(시계열 데이터)
