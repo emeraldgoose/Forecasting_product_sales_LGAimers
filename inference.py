@@ -4,8 +4,7 @@ from cfg import *
 from make_dataset import *
 from model import Model
 
-def inference(test_data, model, scaler, device, artifact_name):
-    model.load_state_dict(torch.load(f'artifact/{artifact_name}.pt'))
+def inference(test_data, model, scaler, device):
     testset = CustomDataset(test_data)
     test_loader = DataLoader(testset, batch_size=10, shuffle=False)
     
@@ -36,15 +35,18 @@ if __name__ == "__main__":
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     print(f'device = {device}')
 
-    train_df = pd.read_csv('data/train_preprocessed.csv')
-    discount_df = pd.read_csv('data/discount.csv').fillna(0)
-    keyword_df = pd.read_csv('data/brand_keyword_cnt_preprocessed.csv').fillna(0)
+    train_df = pd.read_csv('data/scaled_train.csv')
+    discount_df = pd.read_csv('data/scaled_discount.csv').fillna(0)
+    keyword_df = pd.read_csv('data/scaled_keyword.csv').fillna(0)
 
     scaler = MinMaxScaler()
     scaled_train = scaler.fit_transform(train_df)
+
+    artifact_name = ''
     
     model = Model(hidden_size=128).to(device)
+    model.load_state_dict(torch.load(f'{artifact_name}.pt'))
     
     test_data = make_predict_data(scaled_train, keyword_df, discount_df)
     
-    inference(test_data, model, scaler, device, '0.60364-0.55121')
+    inference(test_data, model, scaler, device)
