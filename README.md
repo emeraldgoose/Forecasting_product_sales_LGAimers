@@ -38,5 +38,5 @@ python inference.py
 ```
 
 ## LB
-- Public LB : 0.54446
-- Private LB : 0.52261
+- Public LB : 0.54446 (66th / 757)
+- Private LB : 0.52261 (110th / 747)
